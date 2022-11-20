@@ -1,7 +1,7 @@
 import ISimpleFighter from './Fighter/SimpleFighter';
 
 export default class Monster implements ISimpleFighter {
-  private _lifePoints = 85;
+  protected _lifePoints = 85;
   private _strength = 63;
 
   public get lifePoints() {
