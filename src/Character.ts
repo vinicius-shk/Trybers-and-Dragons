@@ -6,13 +6,13 @@ import Race, { Elf } from './Races';
 import getRandomInt from './utils';
 
 export default class Character implements IFighter {
+  private _dexterity: number = getRandomInt(1, 10);
   private _race: Race = new Elf(this.name, this.dexterity);
   private _archetype: Archetype = new Mage(this.race.name);
   private _maxLifePoints: number = this.race.maxLifePoints / 2;
   private _lifePoints: number = this.maxLifePoints;
   private _strength: number = getRandomInt(1, 10);
   private _defense: number = getRandomInt(1, 10);
-  private _dexterity: number = getRandomInt(1, 10);
   private _energy: IEnergy = {
     type_: this.archetype.energyType,
     amount: getRandomInt(1, 10),
